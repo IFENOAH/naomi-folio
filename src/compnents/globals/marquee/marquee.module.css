@@ -1,0 +1,24 @@
+.slider{
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+  
+.slider p{
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 0 3rem;
+    font-size: 6rem;
+    color: #FFFFFF;
+    animation: anim 4s linear infinite;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
