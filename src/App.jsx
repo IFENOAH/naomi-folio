@@ -1,9 +1,10 @@
-import { Home } from './routes/home/home'
+import { MainLayout } from './compnents/Layout/layout'
 
 function App() {
 
   return (
-    <Home />  )
+    <MainLayout />  
+  )
 }
 
 export default App
