@@ -21,7 +21,7 @@ export const ProjectCard = ({ image, title, text, route }) => {
   
     return (
       <div className='flex items-start flex-col w-full overflow-auto'>
-        <Link to={route} className="space-y-5">
+        <Link to={route} className="space-y-5 w-full">
           <div className='w-full h-[280px] sm:h-[480px] overflow-hidden relative group cursor-pointer'>
             <img 
               className='w-full h-full group-hover:scale-150 hover:blur-sm group-hover:opacity-30 transition-all ease-in-out duration-1000'
