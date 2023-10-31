@@ -30,17 +30,17 @@ export const Hero = () => {
       </motion.section>
       <motion.p
         variants={{
-          hidden: { opacity: 0, y: -500 },
+          hidden: { opacity: 0, y: -100 },
           visible
         }}
-        className='w-full md:w-4/5 text-4xl lg:text-[100px] font-[450px] leading-[50px] lg:leading-[100px] overflow-hidden'>
+        className='w-full md:w-4/5 text-4xl lg:text-[100px] leading-[50px] lg:leading-[100px] overflow-hidden body-font font-Neue font-[450]'>
         A multidisciplinary  designer focusing on digital experiences.
       </motion.p>
       <article className='w-full flex items-end justify-between'>
         <YellowCustomButton text='Scroll' hidden />
         <motion.p 
           variants={itemVariants}
-          className='w-full md:w-3/5 text-base md:text-2xl text-right'
+          className='w-full md:w-3/5 text-base md:text-2xl text-right font-[450]'
         >
           Hello, I’m Naomi,
           a multidisciplinary designer  with an architectural background, focusing on digital experiences. 

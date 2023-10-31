@@ -63,7 +63,7 @@ export const SelectedWork = () => {
     >
       <div className='w-full space-y-36'>
         <header className='w-full md:w-1/4'>
-          <p className='w-1/2 text-6xl md:text-8xl text-nao-white flex items-start justify-start'>Selected Work</p>
+          <p className='w-1/2 text-6xl md:text-8xl text-nao-white flex items-start justify-start font-[450] '>Selected Work</p>
         </header>
         <motion.div 
           initial="hidden"
