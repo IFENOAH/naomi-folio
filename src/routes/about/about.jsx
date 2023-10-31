@@ -3,14 +3,20 @@ import { motion, useIsPresent } from 'framer-motion'
 import { Bio } from './bio';
 import { Education } from './education';
 import { Experience } from './experience';
+import { useScrollToTop } from '../../hooks/useScrollToTop';
+import { useRef } from 'react';
 
 export const About = () => {
 
+  const containerRef = useRef();
   const isPresent = useIsPresent();
+  useScrollToTop(containerRef);
+
 
   return (
     <>
       <motion.main
+        ref={containerRef}
         initial="hidden"
         animate="visible"
         exit={{ opacity: 0, transition: { duration: 1 } }}

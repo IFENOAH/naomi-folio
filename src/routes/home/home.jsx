@@ -2,14 +2,20 @@ import { Hero } from './hero/hero'
 import { SelectedWork } from './selectedwork/selectedwork'
 import { motion, useIsPresent } from 'framer-motion'
 import { Archive } from './archive/archive'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
+import { useRef } from 'react'
 
 export const Home = () => {
 
+
+  const containerRef = useRef()
   const isPresent = useIsPresent()
+  useScrollToTop(containerRef);
 
   return (
     <>
       <motion.main
+        ref={containerRef}
         initial="hidden"
         animate="visible"
         exit={{ opacity: 0, transition: { duration: 1 } }}
