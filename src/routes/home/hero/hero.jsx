@@ -1,4 +1,3 @@
-import React, { useLayoutEffect } from 'react'
 import { motion } from 'framer-motion'
 import { YellowCustomButton } from '../../../compnents/globals/forms/roundyellowbutton'
 
@@ -10,12 +9,8 @@ export const Hero = () => {
     visible
   };
 
-  useLayoutEffect(() => {
-    
-  }, [])
-
   return (
-    <motion.div 
+    <motion.div
       initial="hidden"
       animate="visible"
       exit={{ opacity: 0, transition: { duration: 1 } }}
