@@ -3,16 +3,25 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import HomeBg from '../../assets/images/home.png'
 import AboutBg from '../../assets/images/about.png'
+import { Footer } from '../../wrappers/footer'
+import { useRef } from 'react'
 
 export const MainLayout = () => {
     
     const { pathname } = useLocation()
+    const navRef = useRef()
     const activePath = pathname.split('/').splice(-1)[0]
     const [scrollClass, setscrollClass] = useState(false)
 
     const scrollFunc = () => {
         setscrollClass(true)
     }
+
+    const scrollToTop = () => {
+        navRef.current?.scrollIntoView?.({ behavior: "smooth" });
+        console.log("I was scrolled")
+    }
+
 
     const routeBg = {
         'work': HomeBg,
@@ -23,8 +32,9 @@ export const MainLayout = () => {
 
     return (
         <AnimatePresence mode='wait'>
-            <motion.div layout className='h-[100dvh] overflow-y-auto py-3 flex items-center justify-start flex-col bg-black'
+            <motion.div layout className='h-[100dvh] overflow-y-auto py-3 flex items-center justify-start flex-col bg-black body-font font-Neue'
                 onScroll={scrollFunc}
+                ref={navRef}
                 style={{
                     backgroundImage : `url(${routeBg[activePath]} )`,
                     backgroundRepeat: 'no-repeat',
@@ -48,7 +58,7 @@ export const MainLayout = () => {
                     </svg>
 
                     <ul className='flex items-center justify-between space-x-5 font-normal text-base md:text-xl'>
-                        <li className='hover:text-nao-main menuItem'>
+                        <li className='hover:text-nao-main menuItem font-normal'>
                             <NavLink
                                 style={({ isActive }) => {
                                     return {
@@ -61,7 +71,7 @@ export const MainLayout = () => {
                                 Work
                             </NavLink>
                         </li>
-                        <li className='hover:text-nao-main menuItem'>
+                        <li className='hover:text-nao-main menuItem font-normal'>
                             <NavLink  
                                 style={({ isActive }) => {
                                     return {
@@ -74,7 +84,7 @@ export const MainLayout = () => {
                                 About
                             </NavLink>
                         </li>
-                        <li className='hover:text-nao-main menuItem'>
+                        <li className='hover:text-nao-main menuItem font-normal'>
                             <NavLink  
                                 style={({ isActive }) => {
                                     return {
@@ -87,7 +97,7 @@ export const MainLayout = () => {
                                 Gallery
                             </NavLink>
                         </li>
-                        <li className='hover:text-nao-main menuItem'>
+                        <li className='hover:text-nao-main menuItem font-normal'>
                             <NavLink  
                                 style={({ isActive }) => {
                                     return {
@@ -102,7 +112,8 @@ export const MainLayout = () => {
                         </li>
                     </ul>
                 </nav>
-                <Outlet />
+                    <Outlet />
+                <Footer onClick={scrollToTop} />
             </motion.div>
         </AnimatePresence>
     )

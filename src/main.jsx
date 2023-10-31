@@ -9,6 +9,7 @@ import { Gallery } from './routes/gallery/gallery.jsx'
 import { Home } from './routes/home/home.jsx'
 import { PennyWorth } from './routes/home/project/pennyworth'
 import { HomeIndex } from './routes/home'
+import { AboutIndex } from './routes/about'
 import App from './App'
 
 const router = createBrowserRouter([
@@ -36,7 +37,13 @@ const router = createBrowserRouter([
       },
       {
         path: 'about',
-        element: <About />
+        element: <AboutIndex />,
+        children: [
+          {
+            index: true,
+            element: <About />
+          }
+        ]
       },
       {
         path: 'gallery',

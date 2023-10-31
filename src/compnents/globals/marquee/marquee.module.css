@@ -9,6 +9,7 @@
     white-space: nowrap;
     padding: 0 3rem;
     font-size: 6rem;
+    font-weight: 500;
     color: #FFFFFF;
     animation: anim 4s linear infinite;
 }

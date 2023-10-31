@@ -25,9 +25,11 @@ const pennydata = [
 
 export const PennyWorth = () => {
 
-  const containerRef = useRef()
-  useScrollToTop(containerRef)
-  const navigate = useNavigate()
+  const containerRef = useRef();
+  useScrollToTop(containerRef);
+  const navigate = useNavigate();
+
+
   return (
     <motion.div ref={containerRef} className='space-y-14 max-w-screen-2xl flex items-center justify-center flex-col pt-28 text-white'>
       <section className='text-white px-7 lg:px-20 flex items-start justify-between flex-col space-y-8'>
@@ -65,12 +67,6 @@ export const PennyWorth = () => {
         loading='lazy'
         alt='project-image'
       />
-
-      <button 
-      onClick={() => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})}
-      >
-        Scroll To top
-      </button>
     </motion.div>
   )
 }

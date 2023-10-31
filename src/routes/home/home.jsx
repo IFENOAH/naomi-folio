@@ -1,6 +1,7 @@
 import { Hero } from './hero/hero'
 import { SelectedWork } from './selectedwork/selectedwork'
 import { motion, useIsPresent } from 'framer-motion'
+import { Archive } from './archive/archive'
 
 export const Home = () => {
 
@@ -17,7 +18,7 @@ export const Home = () => {
       >
         <Hero />
         <SelectedWork />
-
+        <Archive />
       </motion.main>
 
       <motion.div
